@@ -1,10 +1,11 @@
 import eventlet
-from pqueue import PeekableQueue
 
-threading = eventlet.import_patched('kazoo.handlers.threading')
+from kzeventlet.pqueue import PeekableQueue
+
+__threading = eventlet.import_patched('kazoo.handlers.threading')
 
 
-class SequentialEventletHandler(threading.SequentialThreadingHandler):
+class SequentialEventletHandler(__threading.SequentialThreadingHandler):
     sleep_func = staticmethod(eventlet.sleep)
 
     def peekable_queue(self, *args, **kwargs):
