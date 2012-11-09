@@ -6,7 +6,7 @@ __threading = eventlet.import_patched('kazoo.handlers.threading')
 
 
 class SequentialEventletHandler(__threading.SequentialThreadingHandler):
-    sleep_func = staticmethod(eventlet.sleep)
+    sleep_func = staticmethod(eventlet.sleep)  # avoid method binding
 
     def peekable_queue(self, *args, **kwargs):
         return PeekableQueue(*args, **kwargs)
