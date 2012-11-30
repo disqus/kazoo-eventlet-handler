@@ -1,5 +1,9 @@
 language: python
 
+notifications:
+  email:
+    - ted@disqus.com
+
 python:
     - "2.6"
     - "2.7"
