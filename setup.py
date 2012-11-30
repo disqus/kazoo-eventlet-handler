@@ -1,5 +1,5 @@
 import sys
-from setuptools import setup
+from setuptools import find_packages, setup
 
 try:
     import multiprocessing
@@ -24,6 +24,7 @@ if 'nosetests' in sys.argv[1:]:
 setup(
     name='kazoo-eventlet-handler',
     version='0.0.0',
+    packages=find_packages(exclude=('tests',)),
     install_requires=install_requires,
     setup_requires=setup_requires,
     tests_require=tests_require,
