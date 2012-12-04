@@ -5,7 +5,7 @@ test: clean
 	python setup.py nosetests
 
 test-matrix: clean
-	pip install --use-mirrors tox
+	which tox >/dev/null || pip install --use-mirrors tox
 	tox
 
 .PHONY: clean test test-matrix
